@@ -3,6 +3,9 @@ const path = require('path');
 
 const app = express();
 
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
 const adminData = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
@@ -14,7 +17,13 @@ app.use(shopRoutes);
 
 // If it cannot find those, it will show this
 app.use((req, res, next) => {
-  res.sendFile(path.join(__dirname, 'views', '404.html'));
+  res.status(404).render('404', {
+    pageTitle: 'Add Product',
+    path: '',
+    formCSS: true,
+    productCSS: true,
+    activeAddProduct: true,
+  });
 });
 
 app.listen(3000);
