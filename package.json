@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "dev": "nodemon app.js"
   },
-  "author": "",
+  "author": "Ahmadjonov Abduboriy",
   "license": "ISC",
-  "description": "",
+  "description": "This is just an project will grow up with my skills",
   "dependencies": {
     "express": "^4.21.2"
   },
